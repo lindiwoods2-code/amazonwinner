@@ -21,6 +21,16 @@ body {
     margin-bottom: 20px;
 }
 
+.prize-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for realism */
+}
+
 .logo {
     width: 150px;
     margin-bottom: 10px;
