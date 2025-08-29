@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+header {
+    background-color: #232f3e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+}
+
+h1, h2, h3 {
+    color: #146eb4; /* Amazon blue */
+}
+
+.prize-section, .form-section, .success-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.prize-img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #f0c14b; /* Amazon yellow */
+    color: #111;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #e5b23a;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: #146eb4;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #232f3e;
+    color: white;
+    font-size: 12px;
+}
