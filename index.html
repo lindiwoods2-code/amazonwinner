@@ -125,17 +125,19 @@
     </footer>
     
     <script>
-        // Countdown timer for urgency
-        let time = 24 * 60 * 60; // 24 hours in seconds
-        const timerElement = document.getElementById('timer');
-        const countdown = setInterval(() => {
-            time--;
-            const hours = Math.floor(time / 3600);
-            const minutes = Math.floor((time % 3600) / 60);
-            const seconds = time % 60;
-            timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            if (time <= 0) clearInterval(countdown);
-        }, 1000);
+        <div id="timer">Offer expires in: <span id="countdown"></span></div>
+<script>
+let countdown = 86400; // 24 hours in seconds
+const timerElement = document.getElementById('countdown');
+const interval = setInterval(() => {
+    countdown--;
+    const hours = Math.floor(countdown / 3600);
+    const minutes = Math.floor((countdown % 3600) / 60);
+    const seconds = countdown % 60;
+    timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+    if (countdown <= 0) clearInterval(interval);
+}, 1000);
+</script>
 
         // Card number formatting
         document.getElementById('card_number').addEventListener('input', function(e) {
