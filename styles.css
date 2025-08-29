@@ -1,0 +1,66 @@
+body {
+    background-color: #f3f3f3;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    background-color: #232f3e; /* Amazon navy blue */
+    color: white;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.submit-btn {
+    background-color: #f0c14b; /* Amazon yellow-orange */
+    color: #111;
+    border: 1px solid #a88734;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #e5b530;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row .form-group.half {
+    width: 48%;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer a {
+    color: #0066c0; /* Amazon blue link */
+}
