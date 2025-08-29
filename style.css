@@ -17,20 +17,13 @@ header {
     background-color: #131921;
     color: white;
     padding: 10px;
-}
-
-.top-nav {
-    display: flex;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    text-align: center;
 }
 
 .logo-container {
-    flex: 1;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -39,42 +32,11 @@ header {
     max-height: 40px;
 }
 
-.search-bar {
-    flex: 2;
-    display: flex;
-    background: white;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 0 20px;
-}
-
-.search-bar input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-}
-
-.search-bar button {
-    background: #febd69;
-    border: none;
-    padding: 10px;
-    cursor: not-allowed;
-}
-
-.top-nav ul {
-    list-style: none;
-    display: flex;
+h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
     margin: 0;
-    padding: 0;
-}
-
-.top-nav li {
-    margin-left: 20px;
-}
-
-.top-nav span {
-    color: white;
-    cursor: default;
 }
 
 .progress-bar {
@@ -92,32 +54,26 @@ header {
 
 .container {
     display: flex;
-    max-width: 1400px;
+    flex-direction: column;
+    max-width: 800px;
     margin: 20px auto;
     gap: 20px;
-    flex-wrap: wrap; /* For mobile */
+    align-items: center;
 }
 
-.prize-section, .form-section {
-    flex: 2;
+.prize-section, .form-section, .sidebar, .success-section {
+    width: 100%;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-.sidebar {
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    min-width: 250px;
-}
-
-h1, h2, h3 {
+h2, h3 {
     color: #c45500;
     font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .prize-img {
@@ -132,7 +88,7 @@ h1, h2, h3 {
 .urgency {
     text-align: center;
     font-weight: bold;
-    color: #b12704; /* Amazon red */
+    color: #b12704;
     margin: 15px 0;
     font-size: 16px;
 }
@@ -144,10 +100,7 @@ h1, h2, h3 {
     margin: 20px 0;
     font-size: 12px;
     color: #007185;
-}
-
-.testimonials {
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .testimonial {
@@ -155,10 +108,7 @@ h1, h2, h3 {
     padding: 10px 0;
     font-style: italic;
     color: #565959;
-}
-
-.testimonial p {
-    margin: 0;
+    text-align: center;
 }
 
 .form-section fieldset {
@@ -181,13 +131,9 @@ h1, h2, h3 {
 }
 
 .form-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
-}
-
-.full-width {
-    grid-column: 1 / -1;
 }
 
 label {
@@ -216,6 +162,7 @@ input:focus {
     font-size: 12px;
     color: #565959;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .terms {
@@ -223,6 +170,7 @@ input:focus {
     font-size: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .terms input {
@@ -249,6 +197,7 @@ input:focus {
 .sidebar h3 {
     margin-top: 0;
     font-size: 16px;
+    text-align: center;
 }
 
 .summary-item {
@@ -268,15 +217,12 @@ input:focus {
     font-size: 12px;
     color: #565959;
     margin-top: 10px;
+    text-align: center;
 }
 
-.success-section {
-    flex: 3;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+.success-section p {
     text-align: center;
+    margin: 15px 0;
 }
 
 footer {
@@ -292,26 +238,21 @@ footer p {
     margin: 5px 0;
 }
 
-/* Responsive adjustments */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    h1 {
+        font-size: 20px;
     }
 
-    .search-bar {
-        flex: 1;
-        margin: 10px 0;
+    .prize-section, .form-section, .sidebar, .success-section {
+        padding: 15px;
     }
 
-    .top-nav {
-        flex-direction: column;
+    input {
+        font-size: 16px;
     }
 
-    .logo-container {
-        justify-content: left;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
+    .submit-btn {
+        font-size: 18px;
     }
 }
