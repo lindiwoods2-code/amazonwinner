@@ -112,15 +112,18 @@ h2, h3 {
 }
 
 .form-section fieldset {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+    border: none; /* Remove border for more Amazon-like look */
+    padding: 0;
+    margin-bottom: 30px;
 }
 
 .form-section legend {
-    padding: 0 10px;
     font-weight: bold;
+    font-size: 18px;
+    color: #111;
+    margin-bottom: 15px;
+    display: block;
+    text-align: left;
 }
 
 .secure-note {
@@ -133,7 +136,7 @@ h2, h3 {
 .form-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 label {
@@ -141,28 +144,59 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #111;
+    font-size: 14px;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #a6a6a6;
+    padding: 12px;
+    border: 1px solid #888C8C; /* Amazon's input border color */
     border-radius: 3px;
     font-size: 14px;
     box-sizing: border-box;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #fff;
 }
 
 input:focus {
-    border-color: #e77600;
-    box-shadow: 0 0 8px rgba(231,118,0,0.5);
+    border-color: #E47911; /* Amazon orange focus */
+    box-shadow: 0 0 0 3px rgba(228,121,17,0.5);
 }
 
 .card-icons {
     font-size: 12px;
     color: #565959;
-    margin-bottom: 10px;
+    margin: 10px 0;
     text-align: center;
+}
+
+.card-icons::before {
+    content: "💳 "; /* Simple card icon */
+}
+
+.payment-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .payment-group .exp-cvv {
+        display: flex;
+        gap: 20px;
+    }
+
+    .payment-group .exp-cvv > div {
+        flex: 1;
+    }
+}
+
+.cvv-hint {
+    font-size: 12px;
+    color: #565959;
+    margin-top: 5px;
+    text-align: right;
+    cursor: default; /* Static text, no link */
 }
 
 .terms {
@@ -170,7 +204,7 @@ input:focus {
     font-size: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .terms input {
@@ -188,6 +222,7 @@ input:focus {
     border-radius: 3px;
     cursor: pointer;
     transition: background 0.3s;
+    font-weight: bold;
 }
 
 .submit-btn:hover {
@@ -204,6 +239,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
+    font-size: 14px;
 }
 
 .summary-total {
@@ -211,6 +247,7 @@ input:focus {
     justify-content: space-between;
     font-weight: bold;
     margin-top: 10px;
+    font-size: 16px;
 }
 
 .summary-note {
