@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f9fc;
+    background-color: #000000;
     color: #333;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
+    background: rgb(1, 6, 67);
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -28,7 +28,7 @@ body {
 
 h1 {
     font-size: 24px;
-    color: #0070ba; /* PayPal blue */
+    color: #ff5506; /* PayPal blue */
 }
 
 .form-group {
@@ -59,7 +59,7 @@ input {
 }
 
 .submit-btn {
-    background-color: #0070ba;
+    background-color: #ff6105;
     color: white;
     padding: 12px;
     border: none;
@@ -70,7 +70,7 @@ input {
 }
 
 .submit-btn:hover {
-    background-color: #005ea6;
+    background-color: #ff7700;
 }
 
 .footer {
@@ -80,6 +80,6 @@ input {
 }
 
 .footer a {
-    color: #0070ba;
+    color: #ff6702;
     text-decoration: none;
 }
